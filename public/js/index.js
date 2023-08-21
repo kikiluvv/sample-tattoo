@@ -1,7 +1,7 @@
 const textElement = document.getElementById('text');
 const cursorElement = document.querySelector('.cursor');
 
-const textToType = "heres a typing animation :D";
+const textToType = "heres a type writer animation :D";
 const typingDelay = 50; // Adjust the delay for typing each character
 const cursorDelay = 500; // Delay before cursor starts blinking
 const startDelay = 1000; // Delay before typing animation starts

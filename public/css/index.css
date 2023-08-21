@@ -1,9 +1,10 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
+    font-family: 'Special Elite', cursive;
 }
 
 :root {
@@ -61,11 +62,11 @@ body {
     transition: all 0.2s ease;
 }
 
-.logo:hover{
+.logo:hover {
     transform: translateY(3px);
 }
 
-.logo:active{
+.logo:active {
     transform: translateY(-10px);
 }
 
@@ -119,6 +120,9 @@ body {
     cursor: pointer;
 }
 
+#mobile-burger-container{
+    display: none;
+}
 
 
 #content-wrapper {
@@ -130,7 +134,7 @@ body {
     height: auto;
 }
 
-#hero{
+#hero {
     width: 100%;
     height: 20vh;
 }
@@ -151,9 +155,12 @@ body {
 }
 
 @keyframes blink {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
     }
+
     50% {
         opacity: 0;
     }
@@ -171,11 +178,15 @@ body {
 
 
 @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
-        transform: translateY(-20px); /* Adjust bounce height */
+        transform: translateY(-20px);
+        /* Adjust bounce height */
     }
 }
 
@@ -220,7 +231,7 @@ body {
     font-size: xx-large;
 }
 
-.btn a{
+.btn a {
     color: var(--text-color);
 }
 
@@ -321,4 +332,67 @@ body {
     font-family: monospace;
     z-index: 5;
     filter: url(#gooeyness);
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    #content-wrapper {
+        font-size: medium;
+        padding: 15px;
+    }
+
+    .content-container {
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+        height: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    #page-wrapper {
+        flex-direction: column;
+    }
+
+    #nav-wrapper {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    #nav-logo {
+        width: 50%;
+        height: 100%;
+    }
+
+    #nav-list-container {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        right: 5vh;
+        
+
+        border: 2px solid hotpink;
+        border-radius: 15px;
+
+    }
+
+    .nav-list {
+        width: auto;
+    }
+
+    .nav-container {
+        width: 50%;
+    }
+
+    .logo {
+        width: 60%;
+    }
+
 }
