@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/gallery.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="page-wrapper">
+        <div id="nav-wrapper">
+            <div id="nav-logo" class="nav-container">
+                <div class="nav-logo">
+                    <a href="/"><img class="logo" src="/assets/global/cat1.png"></a>
+                </div>
+                <h1 class="logo-text">the neighborhood cat</h1>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-list">
+                    <li class="nav-list-item">
+                        <a class="nav-href nav-active" href="/gallery">Flash</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-href" href="#">Booking</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-href" href="/shop">Shop</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-href" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="content-wrapper">
+            <div class="gallery-sort-container">
+                <label for="gallery-sort">Sort by:</label>
+
+                <select name="gallery-sort" id="gallery-sort">
+                    <option value="size-sl">Size (Small to Large)</option>
+                    <option value="size-ls">Size (Large to Small)</option>
+                    <option value="price-lh">Price (Low to High)</option>
+                    <option value="price-hl">Price (Hgih to Low)</option>
+                    <option value="date-no">Date Posted (New to Old)</option>
+                    <option value="date-on">Date Posted (Old to New)</option>
+                </select>
+
+            </div>
+            <% for (let i=0; i < items.length; i++) { %>
+                <% if (i % 6===0) { %>
+                    <div class="gallery-row">
+                        <% } %>
+                            <div class="row-child">
+                                <div class="image-container">
+                                    <img class="gallery-img" src="<%= items[i].image %>" data-index="<%= i %>"
+                                        loading="lazy">
+                                    <% if (items[i].availability==='claimed' ) { %>
+                                        <div class="claimed-overlay">Claimed!</div>
+                                        <% } %>
+                                </div>
+                            </div>
+                            <% if (i % 6===5 || i===items.length - 1) { %>
+                    </div>
+                    <% } %>
+                        <% } %>
+        </div>
+
+        <div id="popup-wrapper" style="display: none;">
+            <div id="popup" class="popup">
+                <div class="popup-left">
+                    <div class="pop-img-container">
+                        <img id="popup-img">
+                        <div class="magnifying-glass">
+                            <div class="magnified-image"></div>
+                        </div>
+                    </div>
+                    <div class="pop-img-container">
+                        <img id="popup-alt-img">
+                        <div class="magnifying-glass">
+                            <div class="magnified-image"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-right">
+                    <h2 id="popup-title"></h2>
+                    <p id="popup-description"></p>
+                    <hr class="popup-hr">
+                    <p id="popup-size"></p>
+                    <hr class="popup-hr">
+                    <p id="popup-price"></p>
+                    <hr class="popup-hr">
+                    <div class="popup-btn-wrapper">
+                        <btn id="pop-btn">Claim!</btn>
+                    </div>
+                    <button id="popup-close" class="popup-close">
+                        <i class="ri-close-line ri-2x"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="up-container">
+            <i class="up-arrow ri-arrow-up-line ri-2x"></i>
+        </div>
+    </div>
+
+
+    </div>
+
+    <script src="/js/gallery.js"></script>
+</body>
+
+
+</html>
