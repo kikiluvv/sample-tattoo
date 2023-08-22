@@ -168,6 +168,7 @@ body {
     padding: 15px;
 }
 
+
 #gallery-sort {
     margin-left: 1vh;
 }
@@ -175,6 +176,7 @@ body {
 .gallery {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .row {
@@ -188,6 +190,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .image-container {
@@ -349,6 +352,11 @@ body {
         display: none;
     }
 
+    .row-child {
+        flex-wrap: nowrap;
+    }
+
+
     .logo {
         width: 60%;
     }
@@ -357,6 +365,34 @@ body {
         height: 35vh;
         z-index: 1;
         opacity: 1;
+    }
+
+    .small {
+        width: 100px;
+        height: 100px;
+        
+    }
+    
+    .medium {
+        width: 100px;
+        height: 200px;
+    
+    }
+    
+    .long {
+        width: 200px;
+        height: 100px;
+    
+    }
+    
+    .large {
+        width: 200px;
+        height: 200px;
+     
+    }
+
+    .image {
+        margin: 5px;
     }
 
 }
