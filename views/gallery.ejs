@@ -15,96 +15,109 @@
 
 <body>
     <div id="page-wrapper">
-        <div id="nav-wrapper">
-            <div id="nav-logo" class="nav-container">
-                <div class="nav-logo">
-                    <a href="/"><img class="logo" src="/assets/global/cat1.png"></a>
-                </div>
+      <div id="nav-wrapper">
+        <div class="mobile-nav-container">
+            <ul class="mobile-nav-list">
+                <li class="nav-list-item">
+                    <a class="nav-href nav-active" href="/gallery">Flash</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-href" href="#">Booking</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-href" href="/shop">Shop</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-href" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div id="nav-logo" class="nav-container">
+            <div class="nav-logo">
+                <a href="/"><img class="logo" src="/assets/global/cat1.png"></a>
                 <h1 class="logo-text">the neighborhood cat</h1>
             </div>
-            <div class="nav-container">
-                <ul class="nav-list">
-                    <li class="nav-list-item">
-                        <a class="nav-href nav-active" href="/gallery">Flash</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a class="nav-href" href="#">Booking</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a class="nav-href" href="/shop">Shop</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a class="nav-href" href="/contact">Contact</a>
-                    </li>
-                </ul>
+            <div id="mobile-burger-container">
+                <i id="burger" class="ri-menu-line ri-2x"></i>
             </div>
         </div>
+        
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li class="nav-list-item">
+                    <a class="nav-href nav-active" href="/gallery">Flash</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-href" href="#">Booking</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-href" href="/shop">Shop</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-href" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
         <div id="content-wrapper">
-            <div class="gallery-sort-container">
-                <label for="gallery-sort">Sort by:</label>
+            
 
-                <select name="gallery-sort" id="gallery-sort">
-                    <option value="size-sl">Size (Small to Large)</option>
-                    <option value="size-ls">Size (Large to Small)</option>
-                    <option value="price-lh">Price (Low to High)</option>
-                    <option value="price-hl">Price (Hgih to Low)</option>
-                    <option value="date-no">Date Posted (New to Old)</option>
-                    <option value="date-on">Date Posted (Old to New)</option>
-                </select>
 
-            </div>
-            <% for (let i=0; i < items.length; i++) { %>
-                <% if (i % 6===0) { %>
-                    <div class="gallery-row">
+            <div class="gallery">
+                <% const setLength = 8; // Number of images per set %>
+                <% const numSets = Math.ceil(images.length / setLength); %>
+                
+                <% for (let setIndex = 0; setIndex < numSets; setIndex++) { %>
+                  <div class="row">
+                    <div class="row-child">
+                      <div class="small-container">
+                        <% const smallImages = images.filter(image => image.size === "small"); %>
+                        <% for (let i = 0; i < 2; i++) { %>
+                          <div class="image-container small" style="<%= smallImages[setIndex * 2 + i] ? '' : 'display: none;' %>">
+                            <img class="image" src="<%= smallImages[setIndex * 2 + i]?.image %>" alt="Image">
+                          </div>
                         <% } %>
-                            <div class="row-child">
-                                <div class="image-container">
-                                    <img class="gallery-img" src="<%= items[i].image %>" data-index="<%= i %>"
-                                        loading="lazy">
-                                    <% if (items[i].availability==='claimed' ) { %>
-                                        <div class="claimed-overlay">Claimed!</div>
-                                        <% } %>
-                                </div>
-                            </div>
-                            <% if (i % 6===5 || i===items.length - 1) { %>
+                      </div>
+                      
+                      <% const mediumImages = images.filter(image => image.size === "medium"); %>
+                      <div class="image-container medium" style="<%= mediumImages[setIndex] ? '' : 'display: none;' %>">
+                        <img class="image" src="<%= mediumImages[setIndex]?.image %>" alt="Image">
+                      </div>
+              
+                      <% const largeImages = images.filter(image => image.size === "large"); %>
+                      <div class="image-container large" style="<%= largeImages[setIndex] ? '' : 'display: none;' %>">
+                        <img class="image" src="<%= largeImages[setIndex]?.image %>" alt="Image">
+                      </div>
                     </div>
-                    <% } %>
+                    
+                    <div class="row-child">
+                      <div class="image-container large" style="<%= largeImages[setIndex + numSets] ? '' : 'display: none;' %>">
+                        <img class="image" src="<%= largeImages[setIndex + numSets]?.image %>" alt="Image">
+                      </div>
+              
+                      <div class="long-container">
+                        <% const longImages = images.filter(image => image.size === "long"); %>
+                        <% for (let i = 0; i < 2; i++) { %>
+                          <div class="image-container long" style="<%= longImages[setIndex * 2 + i] ? '' : 'display: none;' %>">
+                            <img class="image" src="<%= longImages[setIndex * 2 + i]?.image %>" alt="Image">
+                          </div>
                         <% } %>
-        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% } %>
+              </div>
+              
 
-        <div id="popup-wrapper" style="display: none;">
-            <div id="popup" class="popup">
-                <div class="popup-left">
-                    <div class="pop-img-container">
-                        <img id="popup-img">
-                        <div class="magnifying-glass">
-                            <div class="magnified-image"></div>
-                        </div>
-                    </div>
-                    <div class="pop-img-container">
-                        <img id="popup-alt-img">
-                        <div class="magnifying-glass">
-                            <div class="magnified-image"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="popup-right">
-                    <h2 id="popup-title"></h2>
-                    <p id="popup-description"></p>
-                    <hr class="popup-hr">
-                    <p id="popup-size"></p>
-                    <hr class="popup-hr">
-                    <p id="popup-price"></p>
-                    <hr class="popup-hr">
-                    <div class="popup-btn-wrapper">
-                        <btn id="pop-btn">Claim!</btn>
-                    </div>
-                    <button id="popup-close" class="popup-close">
-                        <i class="ri-close-line ri-2x"></i>
-                    </button>
-                </div>
-            </div>
+
+
+
+
+
+
+
+
         </div>
 
         <div id="up-container">
@@ -115,7 +128,10 @@
 
     </div>
 
-    <script src="/js/gallery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/js/menu.js"></script>
+
+
 </body>
 
 

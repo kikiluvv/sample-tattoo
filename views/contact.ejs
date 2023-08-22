@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/contact.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
@@ -16,12 +17,32 @@
     <div id="page-wrapper">
 
         <div id="nav-wrapper">
+            <div class="mobile-nav-container">
+                <ul class="mobile-nav-list">
+                    <li class="nav-list-item">
+                        <a class="nav-href" href="/gallery">Flash</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-href" href="#">Booking</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-href" href="/shop">Shop</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-href nav-active" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
             <div id="nav-logo" class="nav-container">
                 <div class="nav-logo">
                     <a href="/"><img class="logo" src="/assets/global/cat1.png"></a>
+                    <h1 class="logo-text">the neighborhood cat</h1>
                 </div>
-                <h1 class="logo-text">the neighborhood cat</h1>
+                <div id="mobile-burger-container">
+                    <i id="burger" class="ri-menu-line ri-2x"></i>
+                </div>
             </div>
+            
             <div class="nav-container">
                 <ul class="nav-list">
                     <li class="nav-list-item">
@@ -58,6 +79,7 @@
         </div>
 
     </div>
+    <script src="/js/menu.js"></script>
 </body>
 
 </html>

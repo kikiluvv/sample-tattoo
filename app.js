@@ -1,5 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const bodyParser = require('body-parser');
+const axios = require('axios');
+
 
 const express = require('express');
 const app = express();
@@ -11,6 +14,12 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+
+
+/*------------/
+/    Routes   /
+/------------*/
 
 app.get('/', (req, res) => {
     res.render('index');
@@ -20,20 +29,6 @@ app.get('/contact', (req, res) => {
     res.render('contact');
 });
 
-app.get('/data/gallery.json', (req, res) => {
-    const filePath = path.join(__dirname, 'data', 'gallery.json');
-
-    fs.readFile(filePath, 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send('Error reading JSON file');
-            return;
-        }
-
-        const items = JSON.parse(data);
-        res.json(items);
-    });
-});
 
 
 app.get('/gallery', (req, res) => {
@@ -46,12 +41,10 @@ app.get('/gallery', (req, res) => {
             return;
         }
 
-        const items = JSON.parse(data);
-        res.render('gallery', { items }); // Pass the JSON data to the EJS template
+        const images = JSON.parse(data);
+        res.render('gallery', { images }); // Pass the JSON data to the EJS template
     });
 });
-
-
 
 
 app.get('/shop', (req, res) => {
@@ -69,6 +62,46 @@ app.get('/shop', (req, res) => {
     });
 });
 
+
+app.post('/jotform-webhook', async (req, res) => {
+    // Extract claimed tattoo details from req.body (adjust based on your JotForm structure)
+    const claimedTattoo = req.body.data;
+
+    try {
+        // Make an API call to JotForm to retrieve form submission data
+        const jotformAPIKey = process.env.JOTFORM_API_KEY;
+        const formID = process.env.JOTFORM_FORM_ID;
+        const submissionID = claimedTattoo.submissionId;
+
+        const response = await axios.get(`https://api.jotform.com/form/${formID}/submission/${submissionID}`, {
+            headers: {
+                'Authorization': `Bearer ${jotformAPIKey}`
+            }
+        });
+
+        const submissionData = response.data;
+
+        // Update your JSON array with the claimed tattoo information
+        const jsonFilePath = path.join(__dirname, 'data', 'claimedTattoos.json');
+        const jsonContent = fs.readFileSync(jsonFilePath, 'utf8');
+        const jsonArray = JSON.parse(jsonContent);
+
+        // Find the tattoo by ID and mark it as claimed
+        const tattooToUpdate = jsonArray.find(tattoo => tattoo.id === claimedTattoo.id);
+        if (tattooToUpdate) {
+            tattooToUpdate.claimed = true;
+        }
+
+        // Save the updated JSON array
+        fs.writeFileSync(jsonFilePath, JSON.stringify(jsonArray, null, 2));
+
+        // Respond to the JotForm webhook
+        res.json({ message: 'Tattoo claimed successfully' });
+    } catch (error) {
+        console.error('Error retrieving form submission data:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
 
 
 app.listen(port, () => {
