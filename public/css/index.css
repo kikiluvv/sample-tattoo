@@ -54,6 +54,7 @@ body {
 .nav-logo {
     display: flex;
     justify-content: flex-start;
+    flex-direction: column;
 }
 
 .logo {
@@ -124,6 +125,9 @@ body {
     display: none;
 }
 
+.mobile-nav-container {
+    display: none;
+}
 
 #content-wrapper {
     position: relative;
