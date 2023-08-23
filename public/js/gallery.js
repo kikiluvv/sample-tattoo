@@ -29,6 +29,15 @@ toggleScrollButton();
 
 
 
-
-
-
+function generateFormLink(flashId) {
+    return `https://form.jotform.com/232338318374155?flashId=${flashId}`;
+}
+const bookingLinks = document.querySelectorAll('.booking-link');
+bookingLinks.forEach(link => {
+    link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const flashId = this.parentElement.getAttribute('data-id');
+        const schedulingLink = generateFormLink(flashId);
+        window.open(schedulingLink, 'blank');
+    });
+});
