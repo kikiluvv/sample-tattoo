@@ -71,7 +71,7 @@ app.get('/shop', (req, res) => {
 
 app.post('/jotform-webhook', (req, res) => {
     // Extract flashId from the form submission data
-    const flashIdFromJotForm = req.body.q20_flashId; // Use 'q20_flashId'
+    const flashIdFromJotForm = req.body.flashid; // Use 'q20_flashId'
     console.log('Flash ID:', flashIdFromJotForm);
 
     console.log('Webhook Payload:', req.body);
