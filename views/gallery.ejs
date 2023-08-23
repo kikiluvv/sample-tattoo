@@ -2,113 +2,120 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/gallery.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    <title>Flash</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/gallery.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <title>Flash</title>
 </head>
 
 <body>
-    <div id="page-wrapper">
-      <div id="nav-wrapper">
-        <div class="mobile-nav-container">
-            <ul class="mobile-nav-list">
-                <li class="nav-list-item">
-                    <a class="nav-href nav-active" href="/gallery">Flash</a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="nav-href" href="#">Booking</a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="nav-href" href="/shop">Shop</a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="nav-href" href="/contact">Contact</a>
-                </li>
-            </ul>
+  <div id="page-wrapper">
+    <div id="nav-wrapper">
+      <div class="mobile-nav-container">
+        <ul class="mobile-nav-list">
+          <li class="nav-list-item">
+            <a class="nav-href nav-active" href="/gallery">Flash</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" href="#">Booking</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" href="/shop">Shop</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div id="nav-logo" class="nav-container">
+        <div class="nav-logo">
+          <a href="/"><img class="logo" src="/assets/global/cat1.png"></a>
+          <h1 class="logo-text">the neighborhood cat</h1>
         </div>
-        <div id="nav-logo" class="nav-container">
-            <div class="nav-logo">
-                <a href="/"><img class="logo" src="/assets/global/cat1.png"></a>
-                <h1 class="logo-text">the neighborhood cat</h1>
-            </div>
-            <div id="mobile-burger-container">
-                <i id="burger" class="ri-menu-line ri-2x"></i>
-            </div>
+        <div id="mobile-burger-container">
+          <i id="burger" class="ri-menu-line ri-2x"></i>
         </div>
-        
-        <div class="nav-container">
-            <ul class="nav-list">
-                <li class="nav-list-item">
-                    <a class="nav-href nav-active" href="/gallery">Flash</a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="nav-href" href="#">Booking</a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="nav-href" href="/shop">Shop</a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="nav-href" href="/contact">Contact</a>
-                </li>
-            </ul>
-        </div>
+      </div>
+
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <a class="nav-href nav-active" href="/gallery">Flash</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" href="#">Booking</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" href="/shop">Shop</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
 
-        <div id="content-wrapper">
-            
+    <div id="content-wrapper">
 
 
-            <div class="gallery">
-                <% const setLength = 8; // Number of images per set %>
-                <% const numSets = Math.ceil(images.length / setLength); %>
-                
-                <% for (let setIndex = 0; setIndex < numSets; setIndex++) { %>
-                  <div class="row">
-                    <div class="row-child">
-                      <div class="small-container">
-                        <% const smallImages = images.filter(image => image.size === "small"); %>
-                        <% for (let i = 0; i < 2; i++) { %>
-                          <div class="image-container small" style="<%= smallImages[setIndex * 2 + i] ? '' : 'display: none;' %>">
-                            <img class="image" src="<%= smallImages[setIndex * 2 + i]?.image %>" alt="Image">
-                          </div>
+
+      <div class="gallery">
+        <% const setLength=8; // Number of images per set %>
+          <% const numSets=Math.ceil(images.length / setLength); %>
+
+            <% for (let setIndex=0; setIndex < numSets; setIndex++) { %>
+              <div class="row">
+                <div class="row-child">
+                  <div class="small-container">
+                    <% const smallImages=images.filter(image=> image.size === "small" && !image.claimed); %>
+                      <% for (let i=0; i < 2; i++) { %>
+                        <div class="image-container small"
+                          style="<%= smallImages[setIndex * 2 + i] ? '' : 'display: none;' %>">
+                          <img class="image" src="<%= smallImages[setIndex * 2 + i]?.image %>" alt="Image">
+                        </div>
                         <% } %>
-                      </div>
-                      
-                      <% const mediumImages = images.filter(image => image.size === "medium"); %>
-                      <div class="image-container medium" style="<%= mediumImages[setIndex] ? '' : 'display: none;' %>">
-                        <img class="image" src="<%= mediumImages[setIndex]?.image %>" alt="Image">
-                      </div>
-              
-                      <% const largeImages = images.filter(image => image.size === "large"); %>
+                  </div>
+
+                  <div class="flash-design" data-id="1">
+                    <a href="#" class="booking-link">Book this Flash</a>
+                </div>
+
+                  <% const mediumImages=images.filter(image=> image.size === "medium" && !image.claimed); %>
+                    <div class="image-container medium" style="<%= mediumImages[setIndex] ? '' : 'display: none;' %>">
+                      <img class="image" src="<%= mediumImages[setIndex]?.image %>" alt="Image">
+                    </div>
+
+                    <% const largeImages=images.filter(image=> image.size === "large" && !image.claimed); %>
                       <div class="image-container large" style="<%= largeImages[setIndex] ? '' : 'display: none;' %>">
                         <img class="image" src="<%= largeImages[setIndex]?.image %>" alt="Image">
                       </div>
-                    </div>
-                    
-                    <div class="row-child">
-                      <div class="image-container large" style="<%= largeImages[setIndex + numSets] ? '' : 'display: none;' %>">
-                        <img class="image" src="<%= largeImages[setIndex + numSets]?.image %>" alt="Image">
-                      </div>
-              
-                      <div class="long-container">
-                        <% const longImages = images.filter(image => image.size === "long"); %>
-                        <% for (let i = 0; i < 2; i++) { %>
-                          <div class="image-container long" style="<%= longImages[setIndex * 2 + i] ? '' : 'display: none;' %>">
-                            <img class="image" src="<%= longImages[setIndex * 2 + i]?.image %>" alt="Image">
-                          </div>
-                        <% } %>
-                      </div>
-                    </div>
+                </div>
+
+                <div class="row-child">
+                  <% const largeImages2=images.filter(image=> !image.claimed); %>
+                  <div class="image-container large"
+                    style="<%= largeImages[setIndex + numSets] ? '' : 'display: none;' %>">
+                    <img class="image" src="<%= largeImages[setIndex + numSets]?.image %>" alt="Image">
                   </div>
-                <% } %>
+
+                  <div class="long-container">
+                    <% const longImages=images.filter(image=> image.size === "long"); %>
+                      <% for (let i=0; i < 2; i++) { %>
+                        <div class="image-container long"
+                          style="<%= longImages[setIndex * 2 + i] ? '' : 'display: none;' %>">
+                          <img class="image" src="<%= longImages[setIndex * 2 + i]?.image %>" alt="Image">
+                        </div>
+                        <% } %>
+                  </div>
+                </div>
               </div>
-              
+              <% } %>
+      </div>
 
 
 
@@ -117,19 +124,21 @@
 
 
 
-
-        </div>
-
-        <div id="up-container">
-            <i class="up-arrow ri-arrow-up-line ri-2x"></i>
-        </div>
-    </div>
 
 
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="/js/menu.js"></script>
+    <div id="up-container">
+      <i class="up-arrow ri-arrow-up-line ri-2x"></i>
+    </div>
+  </div>
+
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="/js/menu.js"></script>
+  <script src="/js/gallery.js"></script>
 
 
 </body>

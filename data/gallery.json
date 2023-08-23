@@ -4,7 +4,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/1.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -13,7 +13,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/2.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -22,7 +22,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/3.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -31,7 +31,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/4.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -40,7 +40,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/5.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -49,7 +49,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/6.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -58,7 +58,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/7.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -67,7 +67,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/8.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -76,7 +76,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/9.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -85,7 +85,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/10.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -94,7 +94,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/11.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -103,7 +103,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/12.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -112,7 +112,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/13.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -121,7 +121,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/14.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -130,7 +130,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/15.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -139,7 +139,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/16.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -148,7 +148,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/17.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -157,7 +157,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/18.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -175,7 +175,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/20.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -184,7 +184,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/21.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -193,7 +193,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/22.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -202,7 +202,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/23.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -211,7 +211,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/24.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -220,7 +220,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/25.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -229,7 +229,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/26.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -238,7 +238,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/27.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -247,7 +247,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/28.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -256,7 +256,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/29.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -265,7 +265,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/30.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -274,7 +274,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/31.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -283,7 +283,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/32.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -292,7 +292,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/33.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -301,7 +301,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/34.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -310,7 +310,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/35.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -319,7 +319,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/36.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -328,7 +328,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/37.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -337,7 +337,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/38.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -346,7 +346,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/39.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -355,7 +355,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/40.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -364,7 +364,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/41.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -373,7 +373,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/42.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -382,7 +382,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/43.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -391,7 +391,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/44.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -400,7 +400,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/45.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -409,7 +409,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/46.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -418,7 +418,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/47.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -427,7 +427,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/48.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -436,7 +436,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/49.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -445,7 +445,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/50.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -454,7 +454,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/51.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -463,7 +463,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/52.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -472,7 +472,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/53.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -481,7 +481,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/54.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -490,7 +490,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/55.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -499,7 +499,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/56.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -508,7 +508,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/57.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -517,7 +517,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/58.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -526,7 +526,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/59.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -535,7 +535,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/60.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -544,7 +544,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/61.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -553,7 +553,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/62.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -562,7 +562,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/63.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -571,7 +571,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/64.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -580,7 +580,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/65.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -589,7 +589,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/66.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -598,7 +598,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/67.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -607,7 +607,7 @@
         "title": "Flash Title",
         "size": "large",
         "image": "assets/gallery/flash/68.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -616,7 +616,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/69.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -625,7 +625,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/70.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -634,7 +634,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/71.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -643,7 +643,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/72.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -652,7 +652,7 @@
         "title": "Flash Title",
         "size": "small",
         "image": "assets/gallery/flash/73.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -661,7 +661,7 @@
         "title": "Flash Title",
         "size": "medium",
         "image": "assets/gallery/flash/74.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     },
@@ -670,7 +670,7 @@
         "title": "Flash Title",
         "size": "long",
         "image": "assets/gallery/flash/75.png",
-        "claimed": "false",
+        "claimed": false,
         "type": "flash",
         "link": "#"
     }

@@ -63,44 +63,30 @@ app.get('/shop', (req, res) => {
 });
 
 
-app.post('/jotform-webhook', async (req, res) => {
-    // Extract claimed tattoo details from req.body (adjust based on your JotForm structure)
-    const claimedTattoo = req.body.data;
+
+app.post('/jotform-webhook', (req, res) => {
+    // Extract flashId from the form submission data
+    const flashIdFromJotForm = req.body.flashId;
 
     try {
-        // Make an API call to JotForm to retrieve form submission data
-        const jotformAPIKey = process.env.JOTFORM_API_KEY;
-        const formID = process.env.JOTFORM_FORM_ID;
-        const submissionID = claimedTattoo.submissionId;
-
-        const response = await axios.get(`https://api.jotform.com/form/${formID}/submission/${submissionID}`, {
-            headers: {
-                'Authorization': `Bearer ${jotformAPIKey}`
-            }
-        });
-
-        const submissionData = response.data;
-
-        // Update your JSON array with the claimed tattoo information
-        const jsonFilePath = path.join(__dirname, 'data', 'claimedTattoos.json');
+        const jsonFilePath = path.join(__dirname, 'data', 'gallery.json');
         const jsonContent = fs.readFileSync(jsonFilePath, 'utf8');
-        const jsonArray = JSON.parse(jsonContent);
-
-        // Find the tattoo by ID and mark it as claimed
-        const tattooToUpdate = jsonArray.find(tattoo => tattoo.id === claimedTattoo.id);
-        if (tattooToUpdate) {
-            tattooToUpdate.claimed = true;
+        const flashArray = JSON.parse(jsonContent);
+        // Find and update the flash in your JSON array
+        const flashToUpdate = flashArray.find(flash => flash.id === flashIdFromJotForm);
+        if (flashToUpdate) {
+            flashToUpdate.claimed = true;
+            // Update your JSON array or database with the change
         }
-
-        // Save the updated JSON array
         fs.writeFileSync(jsonFilePath, JSON.stringify(jsonArray, null, 2));
 
-        // Respond to the JotForm webhook
-        res.json({ message: 'Tattoo claimed successfully' });
+        res.sendStatus(200); // Send a success response
     } catch (error) {
-        console.error('Error retrieving form submission data:', error);
+        console.error('Error retrieving form submission data', error);
         res.status(500).json({ error: 'Internal server error' });
     }
+
+
 });
 
 
