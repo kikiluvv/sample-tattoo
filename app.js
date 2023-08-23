@@ -30,6 +30,10 @@ app.get('/contact', (req, res) => {
     res.render('contact');
 });
 
+app.post('/test-webhook', (req, res) => {
+    console.log('Test Webhook Received:', req.body);
+    res.sendStatus(200);
+});
 
 
 app.get('/gallery', (req, res) => {
@@ -94,6 +98,11 @@ app.post('/jotform-webhook', (req, res) => {
 
 
 });
+
+app.get('/jotform-webhook', (req, res) => {
+    res.render('webhook');
+
+})
 
 
 app.listen(port, () => {
