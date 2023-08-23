@@ -64,53 +64,6 @@
 
 
 
-      <div class="gallery">
-        <% const setLength=8; // Number of images per set %>
-          <% const numSets=Math.ceil(images.length / setLength); %>
-
-            <% for (let setIndex=0; setIndex < numSets; setIndex++) { %>
-              <div class="row">
-                <div class="row-child">
-                  <div class="small-container">
-                    <% const smallImages=images.filter(image=> image.size === "small" && !image.claimed); %>
-                      <% for (let i=0; i < 2; i++) { %>
-                        <div class="image-container small"
-                          style="<%= smallImages[setIndex * 2 + i] ? '' : 'display: none;' %>">
-                          <img class="image" src="<%= smallImages[setIndex * 2 + i]?.image %>" alt="Image">
-                        </div>
-                        <% } %>
-                  </div>
-                  <% const mediumImages=images.filter(image=> image.size === "medium" && !image.claimed); %>
-                    <div class="image-container medium" style="<%= mediumImages[setIndex] ? '' : 'display: none;' %>">
-                      <img class="image" src="<%= mediumImages[setIndex]?.image %>" alt="Image">
-                    </div>
-
-                    <% const largeImages=images.filter(image=> image.size === "large" && !image.claimed); %>
-                      <div class="image-container large" style="<%= largeImages[setIndex] ? '' : 'display: none;' %>">
-                        <img class="image" src="<%= largeImages[setIndex]?.image %>" alt="Image">
-                      </div>
-                </div>
-
-                <div class="row-child">
-                  <% const largeImages2=images.filter(image=> !image.claimed); %>
-                  <div class="image-container large"
-                    style="<%= largeImages[setIndex + numSets] ? '' : 'display: none;' %>">
-                    <img class="image" src="<%= largeImages[setIndex + numSets]?.image %>" alt="Image">
-                  </div>
-
-                  <div class="long-container">
-                    <% const longImages=images.filter(image=> image.size === "long"); %>
-                      <% for (let i=0; i < 2; i++) { %>
-                        <div class="image-container long"
-                          style="<%= longImages[setIndex * 2 + i] ? '' : 'display: none;' %>">
-                          <img class="image" src="<%= longImages[setIndex * 2 + i]?.image %>" alt="Image">
-                        </div>
-                        <% } %>
-                  </div>
-                </div>
-              </div>
-              <% } %>
-      </div>
 
 
 
