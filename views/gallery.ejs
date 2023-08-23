@@ -80,11 +80,6 @@
                         </div>
                         <% } %>
                   </div>
-
-                  <div class="flash-design" data-id="1">
-                    <a href="#" target="_blank" class="booking-link">Book this Flash</a>
-                </div>
-
                   <% const mediumImages=images.filter(image=> image.size === "medium" && !image.claimed); %>
                     <div class="image-container medium" style="<%= mediumImages[setIndex] ? '' : 'display: none;' %>">
                       <img class="image" src="<%= mediumImages[setIndex]?.image %>" alt="Image">
@@ -119,6 +114,64 @@
 
 
 
+
+
+
+
+
+      <div class="gallery">
+        <% const setLength = 8; %>
+        <% const numSets = Math.ceil(images.length / setLength); %>
+        
+        <% for (let setIndex = 0; setIndex < numSets; setIndex++) { %>
+            <div class="row">
+                <div class="row-child">
+                    <!-- Small Images -->
+                    <div class="small-container">
+                        <% const smallImages = images.filter(image => image.size === "small" && !image.claimed); %>
+                        <% for (let i = 0; i < 2; i++) { %>
+                            <% const currentIndex = setIndex * 2 + i; %>
+                            <div class="image-container small" style="<%= smallImages[currentIndex] ? '' : 'display: none;' %>">
+                                <a href="#" class="booking-link" data-id="<%= smallImages[currentIndex]?.id %>"><img class="image" src="<%= smallImages[currentIndex]?.image %>" alt="Image"></a>
+                            </div>
+                        <% } %>
+                    </div>
+                    
+                    <!-- Medium Images -->
+                    <% const mediumImages = images.filter(image => image.size === "medium" && !image.claimed); %>
+                    <div class="image-container medium" style="<%= mediumImages[setIndex] ? '' : 'display: none;' %>">
+                        <a href="#" class="booking-link" data-id="<%= mediumImages[setIndex]?.id %>"><img class="image" src="<%= mediumImages[setIndex]?.image %>" alt="Image"></a>
+                    </div>
+                    
+                    <!-- Large Images -->
+                    <% const largeImages = images.filter(image => image.size === "large" && !image.claimed); %>
+                    <div class="image-container large" style="<%= largeImages[setIndex] ? '' : 'display: none;' %>">
+                        <a href="#" class="booking-link" data-id="<%= largeImages[setIndex]?.id %>"><img class="image" src="<%= largeImages[setIndex]?.image %>" alt="Image"></a>
+                    </div>
+                </div>
+                
+                <div class="row-child">
+                    <!-- More Large Images -->
+                    <% const moreLargeImages = images.filter(image => !image.claimed); %>
+                    <div class="image-container large" style="<%= moreLargeImages[setIndex + numSets] ? '' : 'display: none;' %>">
+                        <a href="#" class="booking-link" data-id="<%= moreLargeImages[setIndex + numSets]?.id %>"><img class="image" src="<%= moreLargeImages[setIndex + numSets]?.image %>" alt="Image"></a>
+                    </div>
+                    
+                    <!-- Long Images -->
+                    <div class="long-container">
+                        <% const longImages = images.filter(image => image.size === "long"); %>
+                        <% for (let i = 0; i < 2; i++) { %>
+                            <% const currentIndex = setIndex * 2 + i; %>
+                            <div class="image-container long" style="<%= longImages[currentIndex] ? '' : 'display: none;' %>">
+                                <a href="#" class="booking-link" data-id="<%= longImages[currentIndex]?.id %>"><img class="image" src="<%= longImages[currentIndex]?.image %>" alt="Image"></a>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    
 
 
 
