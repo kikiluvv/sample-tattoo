@@ -71,34 +71,37 @@ app.get('/shop', (req, res) => {
 
 app.post('/jotform-webhook', (req, res) => {
     // Extract flashId from the form submission data
-    const flashIdFromJotForm = req.body.q20_flashId;
+    const flashIdFromJotForm = req.body.q20_flashId; // Use 'q20_flashId'
+    console.log('Flash ID:', flashIdFromJotForm);
 
     console.log('Webhook Payload:', req.body);
     try {
         const jsonFilePath = path.join(__dirname, 'data', 'gallery.json');
         const jsonContent = fs.readFileSync(jsonFilePath, 'utf8');
         const flashArray = JSON.parse(jsonContent);
+
         // Find and update the flash in your JSON array
         const flashToUpdate = flashArray.find(flash => flash.id === flashIdFromJotForm);
         if (flashToUpdate) {
             console.log('Updating flash:', flashToUpdate);
-            flashToUpdate.claimed = true;
+            flashToUpdate.claimed = true; // Update the "claimed" value
             console.log('Updated flash:', flashToUpdate);
-            // Update your JSON array or database with the change
         }
-        fs.writeFileSync(jsonFilePath, JSON.stringify(flashArray, null, 2)); // Use flashArray here
+
+        
+
+        // Write the updated JSON array back to the file
+        fs.writeFileSync(jsonFilePath, JSON.stringify(flashArray, null, 2));
         console.log('JSON written to file:', jsonFilePath);
-    
+
         res.sendStatus(200); // Send a success response
         console.log('Sent response:', 200);
     } catch (error) {
         console.error('Error retrieving form submission data', error);
         res.status(500).json({ error: 'Internal server error' });
     }
-    
-
-
 });
+
 
 app.get('/jotform-webhook', (req, res) => {
     res.render('webhook');
