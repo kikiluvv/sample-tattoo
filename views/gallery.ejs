@@ -112,7 +112,7 @@
                     
                     <!-- Long Images -->
                     <div class="long-container">
-                        <% const longImages = images.filter(image => image.size === "long"); %>
+                        <% const longImages = images.filter(image => image.size === "long" && !image.claimed); %>
                         <% for (let i = 0; i < 2; i++) { %>
                             <% const currentIndex = setIndex * 2 + i; %>
                             <div class="image-container long" style="<%= longImages[currentIndex] ? '' : 'display: none;' %>">
