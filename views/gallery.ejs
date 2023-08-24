@@ -70,61 +70,75 @@
 
 
 
-
-
       <div class="gallery">
-        <% const setLength = 8; %>
-        <% const numSets = Math.ceil(images.length / setLength); %>
-        
-        <% for (let setIndex = 0; setIndex < numSets; setIndex++) { %>
-            <div class="row">
+        <% const setLength=8; %>
+          <% const numSets=Math.ceil(images.length / setLength); %>
+
+            <% for (let setIndex=0; setIndex < numSets; setIndex++) { %>
+              <div class="row">
                 <div class="row-child">
-                    <!-- Small Images -->
-                    <div class="small-container">
-                        <% const smallImages = images.filter(image => image.size === "small" && !image.claimed); %>
-                        <% for (let i = 0; i < 2; i++) { %>
-                            <% const currentIndex = setIndex * 2 + i; %>
-                            <div class="image-container small" style="<%= smallImages[currentIndex] ? '' : 'display: none;' %>">
-                                <a href="#" class="booking-link" data-id="<%= smallImages[currentIndex]?.id %>"><img class="image" src="<%= smallImages[currentIndex]?.image %>" alt="Image"></a>
-                            </div>
+                  <!-- Small Images -->
+                  <div class="small-container">
+                    <% const smallImages=images.filter(image=> image.size === "small" && !image.claimed); %>
+                      <% for (let i=setIndex * 2; i < (setIndex + 1) * 2 && i < smallImages.length; i++) { %>
+                        <div class="image-container small">
+                          <a href="#" class="booking-link" data-id="<%= smallImages[i].id %>"><img class="image"
+                              src="<%= smallImages[i].image %>" alt="Image"></a>
+                        </div>
                         <% } %>
-                    </div>
-                    
-                    <!-- Medium Images -->
-                    <% const mediumImages = images.filter(image => image.size === "medium" && !image.claimed); %>
-                    <div class="image-container medium" style="<%= mediumImages[setIndex] ? '' : 'display: none;' %>">
-                        <a href="#" class="booking-link" data-id="<%= mediumImages[setIndex]?.id %>"><img class="image" src="<%= mediumImages[setIndex]?.image %>" alt="Image"></a>
-                    </div>
-                    
-                    <!-- Large Images -->
-                    <% const largeImages = images.filter(image => image.size === "large" && !image.claimed); %>
-                    <div class="image-container large" style="<%= largeImages[setIndex] ? '' : 'display: none;' %>">
-                        <a href="#" class="booking-link" data-id="<%= largeImages[setIndex]?.id %>"><img class="image" src="<%= largeImages[setIndex]?.image %>" alt="Image"></a>
-                    </div>
+                  </div>
+
+                  <!-- Medium Images -->
+                  <div class="medium-container">
+                    <% const mediumImages=images.filter(image=> image.size === "medium" && !image.claimed); %>
+                      <% if (setIndex < mediumImages.length) { %>
+                        <div class="image-container medium">
+                          <a href="#" class="booking-link" data-id="<%= mediumImages[setIndex].id %>"><img class="image"
+                              src="<%= mediumImages[setIndex].image %>" alt="Image"></a>
+                        </div>
+                        <% } %>
+                  </div>
+
+                  <!-- Large Images -->
+                  <div class="large-container">
+                    <% const largeImages=images.filter(image=> image.size === "large" && !image.claimed); %>
+                      <% if (setIndex < largeImages.length) { %>
+                        <div class="image-container large">
+                          <a href="#" class="booking-link" data-id="<%= largeImages[setIndex].id %>"><img class="image"
+                              src="<%= largeImages[setIndex].image %>" alt="Image"></a>
+                        </div>
+                        <% } %>
+                  </div>
                 </div>
-                
+
                 <div class="row-child">
-                    <!-- More Large Images -->
-                    <% const moreLargeImages = images.filter(image => !image.claimed); %>
-                    <div class="image-container large" style="<%= moreLargeImages[setIndex + numSets] ? '' : 'display: none;' %>">
-                        <a href="#" class="booking-link" data-id="<%= moreLargeImages[setIndex + numSets]?.id %>"><img class="image" src="<%= moreLargeImages[setIndex + numSets]?.image %>" alt="Image"></a>
-                    </div>
-                    
-                    <!-- Long Images -->
-                    <div class="long-container">
-                        <% const longImages = images.filter(image => image.size === "long" && !image.claimed); %>
-                        <% for (let i = 0; i < 2; i++) { %>
-                            <% const currentIndex = setIndex * 2 + i; %>
-                            <div class="image-container long" style="<%= longImages[currentIndex] ? '' : 'display: none;' %>">
-                                <a href="#" class="booking-link" data-id="<%= longImages[currentIndex]?.id %>"><img class="image" src="<%= longImages[currentIndex]?.image %>" alt="Image"></a>
-                            </div>
+                  <!-- More Large Images -->
+                  <div class="large-container">
+                    <% const moreLargeImages=images.filter(image=> image.size === "large" && !image.claimed); %>
+                      <% if (setIndex + numSets < moreLargeImages.length) { %>
+                        <div class="image-container large">
+                          <a href="#" class="booking-link" data-id="<%= moreLargeImages[setIndex + numSets].id %>"><img
+                              class="image" src="<%= moreLargeImages[setIndex + numSets].image %>" alt="Image"></a>
+                        </div>
                         <% } %>
-                    </div>
+                  </div>
+
+                  <!-- Long Images -->
+                  <div class="long-container">
+                    <% const longImages=images.filter(image=> image.size === "long" && !image.claimed); %>
+                      <% for (let i=setIndex * 2; i < (setIndex + 1) * 2 && i < longImages.length; i++) { %>
+                        <div class="image-container long">
+                          <a href="#" class="booking-link" data-id="<%= longImages[i].id %>"><img class="image"
+                              src="<%= longImages[i].image %>" alt="Image"></a>
+                        </div>
+                        <% } %>
+                  </div>
                 </div>
-            </div>
-        <% } %>
-    </div>
-    
+
+              </div>
+              <% } %>
+      </div>
+
 
 
 
