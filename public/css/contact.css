@@ -275,4 +275,14 @@ body {
         opacity: 1;
     }
 
+    .hero-link {
+        font-size: x-large;
+    }
+
+}
+
+@media (max-width: 350px) {
+    .hero-link {
+        font-size: large;
+    }
 }
