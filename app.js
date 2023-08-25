@@ -22,21 +22,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 /    Routes   /
 /------------*/
 
-app.get('/', (req, res) => {
-    res.render('index');
-});
+
 
 app.get('/contact', (req, res) => {
     res.render('contact');
 });
 
-app.post('/test-webhook', (req, res) => {
-    console.log('Test Webhook Received:', req.body);
-    res.sendStatus(200);
-});
 
 
-app.get('/gallery', (req, res) => {
+//make this the home page
+app.get('/', (req, res) => {
     const filePath = path.join(__dirname, 'data', 'gallery.json');
 
     fs.readFile(filePath, 'utf8', (err, data) => {
@@ -91,6 +86,8 @@ app.post('/jotform-webhook', (req, res) => {
 
         res.sendStatus(200); // Send a success response
         console.log('Flash update successful. Sent response:', 200);
+        res.redirect(`/jotform-success?flashId=${flashIdFromJotForm}`); // Redirect to the success page
+        console.log('Redirecting to success page.');
     } catch (error) {
         console.error('Error retrieving form submission data', error);
         res.status(500).json({ error: 'Internal server error' });
@@ -98,10 +95,31 @@ app.post('/jotform-webhook', (req, res) => {
 });
 
 
-app.get('/jotform-webhook', (req, res) => {
-    res.render('webhook');
+app.get('/jotform-success', (req, res) => {
+    const flashIdFromJotForm = req.query.flashId; // Use 'flashId' here
+    console.log('Flash ID from query parameter:', flashIdFromJotForm);
 
-})
+    try {
+        const jsonFilePath = path.join(__dirname, 'data', 'gallery.json');
+        const jsonContent = fs.readFileSync(jsonFilePath, 'utf8');
+        const flashArray = JSON.parse(jsonContent);
+
+        // Find the matching flash object in the JSON array
+        const matchedFlash = flashArray.find(flash => flash.id === flashIdFromJotForm);
+        console.log('Matched flash:', matchedFlash);
+
+        if (matchedFlash) {
+            res.render('success', { flashImage: matchedFlash.image });
+        } else {
+            res.render('success', { flashImage: null }); // No matching flash found
+        }
+    } catch (error) {
+        console.error('Error retrieving flash data', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+
 
 
 app.listen(port, () => {

@@ -19,10 +19,7 @@
       <div class="mobile-nav-container">
         <ul class="mobile-nav-list">
           <li class="nav-list-item">
-            <a class="nav-href nav-active" href="/gallery">Flash</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-href" href="#">Booking</a>
+            <a class="nav-href nav-active" href="/">Flash</a>
           </li>
           <li class="nav-list-item">
             <a class="nav-href" href="/shop">Shop</a>
@@ -45,10 +42,7 @@
       <div class="nav-container">
         <ul class="nav-list">
           <li class="nav-list-item">
-            <a class="nav-href nav-active" href="/gallery">Flash</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-href" href="#">Booking</a>
+            <a class="nav-href nav-active" href="/">Flash</a>
           </li>
           <li class="nav-list-item">
             <a class="nav-href" href="/shop">Shop</a>
@@ -61,11 +55,6 @@
     </div>
 
     <div id="content-wrapper">
-
-
-
-
-
 
 
 
@@ -83,7 +72,7 @@
                       <% for (let i=setIndex * 2; i < (setIndex + 1) * 2 && i < smallImages.length; i++) { %>
                         <div class="image-container small">
                           <a href="#" class="booking-link" data-id="<%= smallImages[i].id %>"><img class="image"
-                              src="<%= smallImages[i].image %>" alt="Image"></a>
+                              src="<%= smallImages[i].image %>" alt="Image" loading="lazy"></a>
                         </div>
                         <% } %>
                   </div>
@@ -94,7 +83,7 @@
                       <% if (setIndex < mediumImages.length) { %>
                         <div class="image-container medium">
                           <a href="#" class="booking-link" data-id="<%= mediumImages[setIndex].id %>"><img class="image"
-                              src="<%= mediumImages[setIndex].image %>" alt="Image"></a>
+                              src="<%= mediumImages[setIndex].image %>" alt="Image" loading="lazy"></a>
                         </div>
                         <% } %>
                   </div>
@@ -105,7 +94,7 @@
                       <% if (setIndex < largeImages.length) { %>
                         <div class="image-container large">
                           <a href="#" class="booking-link" data-id="<%= largeImages[setIndex].id %>"><img class="image"
-                              src="<%= largeImages[setIndex].image %>" alt="Image"></a>
+                              src="<%= largeImages[setIndex].image %>" alt="Image" loading="lazy"></a>
                         </div>
                         <% } %>
                   </div>
@@ -118,7 +107,7 @@
                       <% if (setIndex + numSets < moreLargeImages.length) { %>
                         <div class="image-container large">
                           <a href="#" class="booking-link" data-id="<%= moreLargeImages[setIndex + numSets].id %>"><img
-                              class="image" src="<%= moreLargeImages[setIndex + numSets].image %>" alt="Image"></a>
+                              class="image" src="<%= moreLargeImages[setIndex + numSets].image %>" alt="Image" loading="lazy"></a>
                         </div>
                         <% } %>
                   </div>
@@ -129,7 +118,7 @@
                       <% for (let i=setIndex * 2; i < (setIndex + 1) * 2 && i < longImages.length; i++) { %>
                         <div class="image-container long">
                           <a href="#" class="booking-link" data-id="<%= longImages[i].id %>"><img class="image"
-                              src="<%= longImages[i].image %>" alt="Image"></a>
+                              src="<%= longImages[i].image %>" alt="Image" loading="lazy"></a>
                         </div>
                         <% } %>
                   </div>

@@ -34,6 +34,38 @@ body {
     filter: blur(3px);
 }
 
+
+
+/* TEMPORARY */
+#content-wrapper {
+    top: 15vh;
+}
+
+#temp-lock {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.lock-img {
+    position: relative;
+    width: 25%;
+}
+
+#countdown {
+    position: relative;
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 10vh;
+}
+
+
+
+
+
+
 /*--------*/
 /*  Nav   */
 /*--------*/
@@ -460,6 +492,7 @@ body {
 }
 
 
+
 @media (max-width: 768px) {
     #content-wrapper {
         font-size: medium;
@@ -545,3 +578,5 @@ body {
     }
 
 }
+
+

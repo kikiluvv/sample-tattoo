@@ -19,10 +19,7 @@
             <div class="mobile-nav-container">
                 <ul class="mobile-nav-list">
                     <li class="nav-list-item">
-                        <a class="nav-href" href="/gallery">Flash</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a class="nav-href" href="#">Booking</a>
+                        <a class="nav-href" href="/">Flash</a>
                     </li>
                     <li class="nav-list-item">
                         <a class="nav-href nav-active" href="/shop">Shop</a>
@@ -45,10 +42,7 @@
             <div class="nav-container">
                 <ul class="nav-list">
                     <li class="nav-list-item">
-                        <a class="nav-href" href="/gallery">Flash</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a class="nav-href" href="#">Booking</a>
+                        <a class="nav-href" href="/">Flash</a>
                     </li>
                     <li class="nav-list-item">
                         <a class="nav-href nav-active" href="/shop">Shop</a>
@@ -72,7 +66,10 @@
                 </select>
 
             </div>
-            <h1 style="padding: 25px;">Shop coming January 2024</h1>
+            <div id="temp-lock">
+                <img class="lock-img" src="/assets/shop/lock.png">
+            </div>
+            <div id="countdown"></div>
             <% for (let i=0; i < itemsShop.length; i++) { %>
                 <% if (i % 6===0) { %>
                     <div class="shop-row">

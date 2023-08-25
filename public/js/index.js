@@ -133,11 +133,6 @@ $.fn.boom = function (e) {
   
   });
 
-  $(function () {
-    $(document).on('click', '.pop-btn', function (e) {
-      $(this).boom(e);
-    });
-  
-  });
+ 
 
   

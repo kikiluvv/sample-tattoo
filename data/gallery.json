@@ -1,5 +1,14 @@
 [
     {
+        "id": "0",
+        "title": "Test",
+        "size": "large",
+        "image": "/assets/global/cat1.png",
+        "claimed": false,
+        "type": "test",
+        "link": "#"
+    },
+    {
         "id": "1",
         "title": "Flash Title",
         "size": "small",
