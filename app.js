@@ -84,7 +84,6 @@ app.post('/jotform-webhook', (req, res) => {
         fs.writeFileSync(jsonFilePath, JSON.stringify(flashArray, null, 2));
         console.log('JSON written to file:', jsonFilePath);
 
-        res.sendStatus(200); // Send a success response
         console.log('Flash update successful. Sent response:', 200);
         res.redirect(`/jotform-success?flashId=${flashIdFromJotForm}`); // Redirect to the success page
         console.log('Redirecting to success page.');
