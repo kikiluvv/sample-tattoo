@@ -65,8 +65,9 @@ app.get('/shop', (req, res) => {
 
 app.post('/jotform-webhook', (req, res) => {
     // Extract flashId from the form submission data
-    const flashIdFromJotForm = req.body.flashid; // Use 'q20_flashId'
+    const flashIdFromJotForm = req.body.flashId; // Use 'q20_flashId'
    console.log('Flash ID: ', flashIdFromJotForm, ' claimed on Jotform');
+   
     try {
         const jsonFilePath = path.join(__dirname, 'data', 'gallery.json');
         const jsonContent = fs.readFileSync(jsonFilePath, 'utf8');
