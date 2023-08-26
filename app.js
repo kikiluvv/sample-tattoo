@@ -14,9 +14,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.json());
 
 
 
@@ -66,11 +65,9 @@ app.get('/shop', (req, res) => {
 
 
 app.post('/jotform-webhook', (req, res) => {
-    console.log('Raw request: ', req.body);
     // Extract flashId from the form submission data
-    const flashIdFromJotForm = req.body.q32_flashId; // Use 'q20_flashId'
+    const flashIdFromJotForm = req.body.flashid; // Use 'q20_flashId'
    console.log('Flash ID: ', flashIdFromJotForm, ' claimed on Jotform');
-   
     try {
         const jsonFilePath = path.join(__dirname, 'data', 'gallery.json');
         const jsonContent = fs.readFileSync(jsonFilePath, 'utf8');
@@ -120,7 +117,6 @@ app.get('/jotform-success', (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
-
 
 
 

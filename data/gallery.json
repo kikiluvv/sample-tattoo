@@ -4,7 +4,7 @@
         "title": "Test",
         "size": "large",
         "image": "/assets/global/cat1.png",
-        "claimed": true,
+        "claimed": false,
         "type": "test",
         "link": "#"
     },
