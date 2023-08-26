@@ -29,7 +29,6 @@ app.get('/contact', (req, res) => {
 });
 
 
-
 //make this the home page
 app.get('/', (req, res) => {
     const filePath = path.join(__dirname, 'data', 'gallery.json');
