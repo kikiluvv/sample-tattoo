@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="nav-wrapper">
+            <div class="nav-container">
+                <div class="nav-list">
+                    <a href="#" class="nav-href"><li class="nav-list-item nav-active">Home</li></a>
+                    <div class="dropdown nav-href">
+                        <li class="gallery-item nav-list-item">Gallery</li>
+                        <div class="dropdown-content">
+                            <a class="dropdown-href" href="/dashboard/add">Add Flash</a>
+                            <a class="dropdown-href" href="/dashboard/edit">Edit Flash</a>
+                            <a class="dropdown-href" href="/dashboard/remove">Remove Flash</a>
+                        </div>
+                    </div>
+                    <a href="#" class="nav-href"><li class="nav-list-item">Logs</li></a>
+                    <a href="#" class="nav-href"><li class="nav-list-item">Help</li></a>
+                    <a href="/logout" class="nav-href"><li class="nav-list-item">Logout</li></a>
+                </div>
+            </div>
+            
+        </div>
+        <div id="content-wrapper">
+            <div class="content-container hero-container">
+                logo here
+            </div>
+            <div class="content-container">
+                <div class="floating-nav-list">
+                        <div class="floating-nav-item">
+                            <a href="#">Add Flash</a>
+                        </div>
+                        <div class="floating-nav-item">
+                            <a href="#">Edit Flash</a>
+                        </div>
+                        <div class="floating-nav-item">
+                            <a href="#">Remove Flash</a>
+                        </div>
+                        <div class="floating-nav-item">
+                            <a href="#">Help</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

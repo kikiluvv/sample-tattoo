@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dash-edit.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="nav-wrapper">
+            <div class="nav-container">
+                <div class="nav-list">
+                    <a href="/dashboard" class="nav-href"><li class="nav-list-item">Home</li></a>
+                    <div class="dropdown nav-href">
+                        <li class="gallery-item nav-list-item nav-active">Gallery</li>
+                        <div class="dropdown-content">
+                            <a class="dropdown-href" href="/dashboard/add">Add Flash</a>
+                            <a class="dropdown-href nav-active" href="#">Edit Flash</a>
+                            <a class="dropdown-href" href="/dashboard/remove">Remove Flash</a>
+                        </div>
+                    </div>
+                    <a href="#" class="nav-href"><li class="nav-list-item">Logs</li></a>
+                    <a href="#" class="nav-href"><li class="nav-list-item">Help</li></a>
+                    <a href="/logout" class="nav-href"><li class="nav-list-item">Logout</li></a>
+                </div>
+            </div>
+            
+        </div>
+        <div id="content-wrapper">
+            <div class="content-container">
+                Click the flash you wanna edit 
+            </div>
+        </div>
+
+
+        <div class="gallery">
+            <% const imageSizeMap = {
+                   small: 'small-container',
+                   medium: 'medium-container',
+                   long: 'long-container',
+                   large: 'large-container'
+               };
+            %>
+        
+            <% Object.keys(imageSizeMap).forEach(size => { %>
+                <div class="column">
+                    <h2 class="column-title"><%= size %> Images</h2> <!-- Add the size title -->
+                    <div class="<%= imageSizeMap[size] %>">
+                        <% const imagesForSize = images.filter(image => image.size === size && !image.claimed); %>
+                        <% imagesForSize.forEach(image => { %>
+                            <div class="image-container <%= size %>">
+                                <a href="#" class="booking-link" data-id="<%= image.id %>">
+                                    <img class="image" src="/assets/gallery/flash/<%= image.id %>.png" alt="Image" loading="lazy">
+                                </a>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        
+        
+
+        
+
+    
+    </div>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

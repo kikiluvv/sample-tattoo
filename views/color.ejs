@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/gallery.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <title>𝚏𝚕𝚊𝚜𝚑</title>
+</head>
+
+<body>
+  <div id="page-wrapper">
+    <div id="nav-wrapper">
+      <div class="mobile-nav-container">
+        <ul class="mobile-nav-list">
+          <li class="nav-list-item">
+            <a class="nav-href nav-active" href="/">black & white</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" href="/">color</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" target="_blank" href="https://form.jotform.com/232375315849059">waitlist</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" href="/shop">shop</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" href="/contact">contact</a>
+          </li>
+        </ul>
+      </div>
+      <div id="nav-logo" class="nav-container">
+        <div class="nav-logo">
+          <a href="/"><img class="logo" src="/assets/global/cat1.png"></a>
+          <h1 class="logo-text">the neighborhood cat</h1>
+        </div>
+        <div id="mobile-burger-container">
+          <i id="burger" class="ri-menu-line ri-2x"></i>
+        </div>
+      </div>
+
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <a class="nav-href" href="/">b&w</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href nav-active" href="/color">color</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" target="_blank" href="https://form.jotform.com/232375315849059">waitlist</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" href="/shop">shop</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-href" href="/contact">contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="content-wrapper">
+
+
+
+
+      <div class="gallery">
+        <% const setLength=8; %>
+          <% const numSets=Math.ceil(images.length / setLength); %>
+
+            <% for (let setIndex=0; setIndex < numSets; setIndex++) { %>
+              <div class="row">
+                <div class="row-child">
+                  <!-- Small Images -->
+                  <div class="small-container">
+                    <% const smallImages=images.filter(image=> image.size === "small" && !image.claimed); %>
+                      <% for (let i=setIndex * 2; i < (setIndex + 1) * 2 && i < smallImages.length; i++) { %>
+                        <div class="image-container small">
+                          <a href="#" class="booking-link" data-id="<%= smallImages[i].id %>"><img class="image"
+                              src="<%= smallImages[i].image %>" alt="Image" loading="lazy"></a>
+                        </div>
+                        <% } %>
+                  </div>
+
+                  <!-- Medium Images -->
+                  <div class="medium-container">
+                    <% const mediumImages=images.filter(image=> image.size === "medium" && !image.claimed); %>
+                      <% if (setIndex < mediumImages.length) { %>
+                        <div class="image-container medium">
+                          <a href="#" class="booking-link" data-id="<%= mediumImages[setIndex].id %>"><img class="image"
+                              src="<%= mediumImages[setIndex].image %>" alt="Image" loading="lazy"></a>
+                        </div>
+                        <% } %>
+                  </div>
+
+                  <!-- Large Images -->
+                  <div class="large-container">
+                    <% const largeImages=images.filter(image=> image.size === "large" && !image.claimed); %>
+                      <% if (setIndex < largeImages.length) { %>
+                        <div class="image-container large">
+                          <a href="#" class="booking-link" data-id="<%= largeImages[setIndex].id %>"><img class="image"
+                              src="<%= largeImages[setIndex].image %>" alt="Image" loading="lazy"></a>
+                        </div>
+                        <% } %>
+                  </div>
+                </div>
+
+                <div class="row-child">
+                  <!-- More Large Images -->
+                  <div class="large-container">
+                    <% const moreLargeImages=images.filter(image=> image.size === "large" && !image.claimed); %>
+                      <% if (setIndex + numSets < moreLargeImages.length) { %>
+                        <div class="image-container large">
+                          <a href="#" class="booking-link" data-id="<%= moreLargeImages[setIndex + numSets].id %>"><img
+                              class="image" src="<%= moreLargeImages[setIndex + numSets].image %>" alt="Image"
+                              loading="lazy"></a>
+                        </div>
+                        <% } %>
+                  </div>
+
+                  <!-- Long Images -->
+                  <div class="long-container">
+                    <% const longImages=images.filter(image=> image.size === "long" && !image.claimed); %>
+                      <% for (let i=setIndex * 2; i < (setIndex + 1) * 2 && i < longImages.length; i++) { %>
+                        <div class="image-container long">
+                          <a href="#" class="booking-link" data-id="<%= longImages[i].id %>"><img class="image"
+                              src="<%= longImages[i].image %>" alt="Image" loading="lazy"></a>
+                        </div>
+                        <% } %>
+                  </div>
+                </div>
+
+              </div>
+              <% } %>
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+
+    <div id="up-container">
+      <i class="up-arrow ri-arrow-up-line ri-2x"></i>
+    </div>
+  </div>
+
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="/js/menu.js"></script>
+  <script src="/js/gallery.js"></script>
+  <script src="/js/dashboard.js"></script>
+
+
+</body>
+
+
+</html>

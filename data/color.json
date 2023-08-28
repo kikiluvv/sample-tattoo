@@ -1,0 +1,11 @@
+[
+    {
+        "id": "1",
+        "title": "Flash Title",
+        "size": "small",
+        "image": "assets/gallery/flash/1.png",
+        "claimed": false,
+        "type": "flash",
+        "link": "#"
+    }
+]

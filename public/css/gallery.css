@@ -112,7 +112,7 @@ body {
 .nav-list-item {
     margin-top: 1vh;
     margin-bottom: 1vh;
-    color: white;
+    color: black;
 }
 
 .nav-href {
@@ -124,7 +124,7 @@ body {
 }
 
 .nav-active {
-    color: hotpink;
+    color: #7c56bd;
 }
 
 .nav-href:hover {
@@ -417,7 +417,7 @@ body {
     }
 
     .menu-open {
-        height: 35vh;
+        height: 40vh;
         z-index: 1;
         opacity: 1;
     }
