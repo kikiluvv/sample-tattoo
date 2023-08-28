@@ -193,6 +193,18 @@ body {
     margin-right: 1vh;
 }
 
+#footer {
+    position: fixed;
+    bottom: 3vh;
+    align-self: center;
+}
+
+#footer a {
+    color: black;
+    cursor: pointer;
+    font-size: small;
+}
+
 @media (max-width: 768px) {
     #content-wrapper {
         font-size: medium;
