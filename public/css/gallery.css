@@ -298,24 +298,9 @@ body {
         height: 300px;
         width: 300px;
     }
-}
-
-@media (max-width: 840px) {
-    .small {
-        height: 100px;
-        width: 100px;
-    }
-    .medium {
-        height: 200px;
-        width: 100px;
-    }
-    .long {
-        height: 100px;
-        width: 200px;
-    }
-    .large {
-        height: 200px;
-        width: 200px;
+    .huge {
+        height: 400px;
+        width: 400px;
     }
 }
 
@@ -335,6 +320,33 @@ body {
     .large {
         height: 200px;
         width: 200px;
+    }
+    .huge {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 840px) {
+    .small {
+        height: 100px;
+        width: 100px;
+    }
+    .medium {
+        height: 200px;
+        width: 100px;
+    }
+    .long {
+        height: 100px;
+        width: 200px;
+    }
+    .large {
+        height: 200px;
+        width: 200px;
+    }
+    .huge {
+        height: 300px;
+        width: 300px;
     }
 }
 
@@ -450,6 +462,10 @@ body {
         height: 200px;
      
     }
+    .huge {
+        height: 300px;
+        width: 300px;
+    }
 
     .image {
         margin: 5px;
@@ -473,5 +489,9 @@ body {
     .large {
         height: 150px;
         width: 150px;
+    }
+    .huge {
+        height: 250px;
+        width: 250px;
     }
 }
