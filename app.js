@@ -110,6 +110,10 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/events', (req, res) => {
+    res.render('events')
+});
+
 app.get('/color', (req, res) => {
     const filePath = path.join(__dirname, 'data', 'gallery.json');
 
